@@ -11,12 +11,12 @@ import {AppRoutingModule} from './app-routing.module';
   declarations: [
     AppComponent,
     PokemonComponent,
-    TypeComponent,
-    AppRoutingModule,
+    TypeComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
