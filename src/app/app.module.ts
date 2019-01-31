@@ -4,7 +4,7 @@ import {HttpClientModule} from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { PokemonComponent } from './pokemon/pokemon.component';
 import { TypeComponent } from './type/type.component';
-
+import {AppRoutingModule} from './app-routing.module';
 
 
 @NgModule({
@@ -12,6 +12,7 @@ import { TypeComponent } from './type/type.component';
     AppComponent,
     PokemonComponent,
     TypeComponent,
+    AppRoutingModule,
   ],
   imports: [
     BrowserModule,
