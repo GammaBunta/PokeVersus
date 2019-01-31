@@ -1,0 +1,7 @@
+<div *ngIf="">
+  <h4>{{poke.name}}</h4>
+  <label for="select_move">Please choose the move you want to try :</label>
+  <select id="select_move" name="select_move">
+    <option *ngFor="let move of moves">{{move.name}}</option>
+  </select>
+</div>

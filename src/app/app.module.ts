@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 import { PokemonComponent } from './pokemon/pokemon.component';
 import { TypeComponent } from './type/type.component';
 import {AppRoutingModule} from './app-routing.module';
+import { FormulainComponent } from './formulain/formulain.component';
 
 
 @NgModule({
@@ -12,6 +13,7 @@ import {AppRoutingModule} from './app-routing.module';
     AppComponent,
     PokemonComponent,
     TypeComponent,
+    FormulainComponent,
   ],
   imports: [
     BrowserModule,

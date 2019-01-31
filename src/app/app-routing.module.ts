@@ -1,13 +1,14 @@
 import { NgModule } from '@angular/core';
 import {PokemonComponent} from './pokemon/pokemon.component';
 import {TypeComponent} from './type/type.component';
+import {FormulainComponent} from './formulain/formulain.component';
 import {RouterModule, Routes} from '@angular/router';
-
 
 const routes: Routes = [
   {path: 'types', component: TypeComponent },
   {path : '', redirectTo: '/types', pathMatch: 'full'},
-  {path : 'pokemon', component : PokemonComponent}
+  {path : 'pokemon', component : PokemonComponent},
+  {path : 'formulain', component : FormulainComponent}
 ];
 
 @NgModule({
