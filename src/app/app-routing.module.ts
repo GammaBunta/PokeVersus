@@ -9,6 +9,7 @@ const routes: Routes = [
   {path : '', redirectTo: '/types', pathMatch: 'full'},
   {path : 'pokemon', component : PokemonComponent}
 ];
+
 @NgModule({
   exports : [RouterModule],
   declarations: [],
