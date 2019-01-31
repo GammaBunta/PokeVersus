@@ -1,7 +1,27 @@
-<div *ngIf="">
-  <h4>{{poke.name}}</h4>
-  <label for="select_move">Please choose the move you want to try :</label>
-  <select id="select_move" name="select_move">
-    <option *ngFor="let move of moves">{{move.name}}</option>
-  </select>
+<div width="40%">
+  <h4> Your Pocket Monster : {{poke.name}}</h4>
+
+  <label>Please choose the move you want to try :
+    <select>
+      <option (select)="selectMove(move)" *ngFor="let move of moves">{{move.name}}</option>
+    </select>
+  </label>
+
+  <input [(ngModel)]="att_spe" placeholder="Special Attack">
+  <input [(ngModel)]="att" placeholder="Attack">
+
+
+</div>
+<div width="40%" *ngIf="def">
+  <h4> Adversary : {{def.name}}</h4>
+
+  <label>Please choose the pokemon you want to attack :
+    <select>
+      <option (select)="selectDef(poke_def)" *ngFor="let poke_def of pokemons">{{poke_def.name}}</option>
+    </select>
+  </label>
+
+  <input [(ngModel)]="att_spe" placeholder="Special Attack">
+  <input [(ngModel)]="att" placeholder="Attack">
+
 </div>

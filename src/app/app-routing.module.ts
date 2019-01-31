@@ -8,7 +8,7 @@ const routes: Routes = [
   {path: 'types', component: TypeComponent },
   {path : '', redirectTo: '/types', pathMatch: 'full'},
   {path : 'pokemon', component : PokemonComponent},
-  {path : 'formulain', component : FormulainComponent}
+  {path : 'formulain/:id', component : FormulainComponent}
 ];
 
 @NgModule({
