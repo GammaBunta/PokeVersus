@@ -10,8 +10,8 @@ export class MoveService {
 
   private pokeUrl = 'https://pokeapi.co/api/v2/';
 
-  getMoves(): Observable<any> {
-    const url = `${this.pokeUrl}pokemon/`;
+  getMoves(id: number): Observable<any> {
+    const url = `${this.pokeUrl}pokemon/${id}/`;
     return this.http.get(url);
   }
 }

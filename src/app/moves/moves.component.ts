@@ -13,7 +13,7 @@ import {forEach} from '@angular/router/src/utils/collection';
 
 export class MovesComponent implements OnInit {
   moves: Move[];
-  nomPoke: String;
+  nomPoke: number;
 
   constructor( private route: ActivatedRoute,
                private moveService: MoveService){ }
@@ -24,8 +24,8 @@ export class MovesComponent implements OnInit {
   }
 
   getMoves(): void {
-    this.nomPoke = this.route.snapshot.paramMap.get('nom');
-    this.moveService.getMoves().subscribe(data => {
+    this.nomPoke = + this.route.snapshot.paramMap.get('id');
+    this.moveService.getMoves(this.nomPoke).subscribe(data => {
 
       for (let move of data['moves']) {
         this.moves.push({name: move['move']['name']});
