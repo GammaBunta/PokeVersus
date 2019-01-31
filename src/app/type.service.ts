@@ -17,9 +17,9 @@ export class TypeService {
 
   constructor(private http: HttpClient) {}
 
-  getTypes(): Observable<Type[]> {
+  getTypes(): Observable<any> {
     const url = `${this.pokeUrl}/type/`;
-    return this.http.get<Type[]>(url);
+    return this.http.get(url);
   }
 
 }

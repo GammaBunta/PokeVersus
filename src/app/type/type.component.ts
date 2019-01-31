@@ -17,10 +17,8 @@ export class TypeComponent implements OnInit {
   }
 
 
-  getTypes(): void{
-    this.typeService.getTypes().subscribe(types => {this.types = types;
-    console.log(this.types);
-    });
+  getTypes(): void {
+    this.typeService.getTypes().subscribe(data => this.types = data['results']);
   }
 
 
