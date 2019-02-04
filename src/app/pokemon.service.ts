@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import {Observable} from 'rxjs';
+import {Pokemon} from './type';
 
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
@@ -16,6 +17,11 @@ export class PokemonService {
 
   getPokemonType(id: String): Observable<any> {
     const url = `${this.pokeUrl}type/${id}`;
+    return this.http.get(url);
+  }
+
+  getPokemon(id: number): Observable<any> {
+    const url = `${this.pokeUrl}/pokemon/${id}`;
     return this.http.get(url);
   }
 

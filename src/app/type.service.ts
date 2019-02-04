@@ -1,6 +1,13 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import {Observable} from 'rxjs';
+import {Type} from './type';
+import {map} from 'rxjs/operators';
+
+
+const httpOptions = {
+  headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+};
 
 @Injectable({providedIn: 'root'})
 
@@ -14,5 +21,4 @@ export class TypeService {
     const url = `${this.pokeUrl}/type/`;
     return this.http.get(url);
   }
-
 }
