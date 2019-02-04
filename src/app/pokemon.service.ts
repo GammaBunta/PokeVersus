@@ -10,13 +10,12 @@ const httpOptions = {
   providedIn: 'root'
 })
 export class PokemonService {
-
   private pokeUrl = 'https://pokeapi.co/api/v2/';
 
   constructor(private http: HttpClient) {}
 
-  getPokemons(): Observable<any> {
-    const url = `${this.pokeUrl}/pokemon/`;
+  getPokemonType(id: String): Observable<any> {
+    const url = `${this.pokeUrl}type/${id}`;
     return this.http.get(url);
   }
 
