@@ -5,19 +5,19 @@ import { AppComponent } from './app.component';
 import { PokemonComponent } from './pokemon/pokemon.component';
 import { TypeComponent } from './type/type.component';
 import {AppRoutingModule} from './app-routing.module';
-
+import { MovesComponent } from './moves/moves.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     PokemonComponent,
-    TypeComponent
-
+    TypeComponent,
+    MovesComponent,
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
-    AppRoutingModule
+    AppRoutingModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

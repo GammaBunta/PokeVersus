@@ -16,7 +16,9 @@ export class TypeComponent implements OnInit {
   ngOnInit() {
     this.getTypes();
   }
+  
   getTypes(): void {
     this.typeService.getTypes().subscribe(data => this.types = data['results']);
   }
+
 }

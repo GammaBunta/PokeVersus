@@ -10,6 +10,7 @@ import {ActivatedRoute} from '@angular/router';
   styleUrls: ['./pokemon.component.css']
 })
 export class PokemonComponent implements OnInit {
+
   pokemons: Pokemon[];
   id: String;
   constructor(private pokemonService: PokemonService,
@@ -25,6 +26,7 @@ export class PokemonComponent implements OnInit {
     this.id = this.route.snapshot.paramMap.get('id');
     console.log('poke-compo : ' + this.id);
     this.pokemonService.getPokemonType(this.id).subscribe(data => this.pokemons = data['pokemon']);
+
   }
 
 }

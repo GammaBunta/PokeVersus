@@ -4,15 +4,14 @@ import {Observable} from 'rxjs';
 
 @Injectable({providedIn: 'root'})
 
-export class TypeService {
-
-  private pokeUrl = 'http://pokeapi.salestock.net/api/v2';
+export class MoveService {
 
   constructor(private http: HttpClient) {}
 
-  getTypes(): Observable<any> {
-    const url = `${this.pokeUrl}/type/`;
+  private pokeUrl = 'https://pokeapi.co/api/v2/';
+
+  getMoves(id: number): Observable<any> {
+    const url = `${this.pokeUrl}pokemon/${id}/`;
     return this.http.get(url);
   }
-
 }
