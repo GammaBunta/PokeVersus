@@ -7,6 +7,7 @@ import { TypeComponent } from './type/type.component';
 import {AppRoutingModule} from './app-routing.module';
 import { FormulainComponent } from './formulain/formulain.component';
 import { MovesComponent } from './moves/moves.component';
+import { CalculComponent } from './calcul/calcul.component';
 
 @NgModule({
   declarations: [
@@ -15,6 +16,7 @@ import { MovesComponent } from './moves/moves.component';
     TypeComponent,
     FormulainComponent,
     MovesComponent,
+    CalculComponent,
   ],
   imports: [
     BrowserModule,
