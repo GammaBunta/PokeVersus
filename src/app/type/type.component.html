@@ -1,12 +1,10 @@
 
+
 <div class="mt-5">
   <h2 id="titretype" class="mt-5">Select a type of pokemon</h2>
-
-  <div class="m-5" id="coucou">
-    <a routerLink="/pokemon/{{type}}" *ngFor="let type of types ">
+    <a routerLink="/pokemon/{{(id+1)}}" *ngFor="let type of types.slice(0, types.length-2); let id = index">
       <span id="type" class="badge m-3"> {{type.name}}</span>
     </a>
-  </div>
 </div>
 
 
