@@ -2,7 +2,7 @@ import {MoveService} from '../move.service';
 import {Move} from '../move';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import {forEach} from '@angular/router/src/utils/collection';
+
 
 
 @Component({
@@ -16,7 +16,7 @@ export class MovesComponent implements OnInit {
   nomPoke: number;
 
   constructor( private route: ActivatedRoute,
-               private moveService: MoveService){ }
+               private moveService: MoveService) { }
 
   ngOnInit() {
     this.getMoves();

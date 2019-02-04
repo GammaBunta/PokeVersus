@@ -6,6 +6,7 @@ import { PokemonComponent } from './pokemon/pokemon.component';
 import { TypeComponent } from './type/type.component';
 import {AppRoutingModule} from './app-routing.module';
 import { MovesComponent } from './moves/moves.component';
+import { CalculComponent } from './calcul/calcul.component';
 
 @NgModule({
   declarations: [
@@ -13,6 +14,7 @@ import { MovesComponent } from './moves/moves.component';
     PokemonComponent,
     TypeComponent,
     MovesComponent,
+    CalculComponent,
   ],
   imports: [
     BrowserModule,
