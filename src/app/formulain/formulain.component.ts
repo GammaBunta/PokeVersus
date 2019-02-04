@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { PokemonService } from '../pokemon.service';
 import {ActivatedRoute} from '@angular/router';
 import {Observable} from 'rxjs';
-import {Pokemon, Move, Type} from '../type';
+import {Pokemon, Move} from '../type';
 
 @Component({
   selector: 'app-formulain',
@@ -14,15 +14,16 @@ export class FormulainComponent implements OnInit {
   constructor(private pokemonService: PokemonService,
               private route: ActivatedRoute) { }
 
+  poke: Pokemon;
+  move: Move;
+  poke_level: number;
   att: number;
   att_spe: number;
-
-  move: Move;
-
-  poke: Pokemon;
+  
   def: Pokemon;
+  def_level: number;
 
-  pokemons: Observable<Pokemon[]>;
+  pokemons: Observable<Pokemon>;
   moves: Observable<Move[]>;
 
   selectDef(p: Pokemon) {
@@ -33,11 +34,9 @@ export class FormulainComponent implements OnInit {
     this.move = m;
   }
 
-
   ngOnInit() {
-    this.poke = this.pokemonService.getPokemon(+this.route.snapshot.paramMap.get('id'))
-      .subscribe();
-    this.pokemons = this.pokemonService.getPokemons().subscribe();
+    this.pokemonService.getPokemon(+this.route.snapshot.paramMap.get('id')).subscribe(pokemon => this.poke = pokemon);
+    this.pokemonService.getPokemons().subscribe(pokemons => this.pokemons = pokemons);
   }
 
 }
