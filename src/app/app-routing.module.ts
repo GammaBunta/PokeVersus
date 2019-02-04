@@ -7,7 +7,7 @@ import {RouterModule, Routes} from '@angular/router';
 const routes: Routes = [
   {path: 'types', component: TypeComponent },
   {path : '', redirectTo: '/types', pathMatch: 'full'},
-  {path : 'pokemon', component : PokemonComponent}
+  {path : 'pokemon/:id', component : PokemonComponent}
 ];
 
 @NgModule({

@@ -14,8 +14,8 @@ export class PokemonService {
 
   constructor(private http: HttpClient) {}
 
-  getPokemonType(): Observable<any> {
-    const url = `${this.pokeUrl}type/6`;
+  getPokemonType(id: String): Observable<any> {
+    const url = `${this.pokeUrl}type/${id}`;
     return this.http.get(url);
   }
 
