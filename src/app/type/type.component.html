@@ -1,9 +1,12 @@
-<h2>Types de Pokémons</h2>
 
-<ul>
-  <li *ngFor="let type of types ">
-    <a routerLink="/pokemon/{{type}}">
-    <span class="badge badge-pill badge-primary"> {{type.name}}</span>
+<div class="mt-5">
+  <h2 id="titretype" class="mt-5">Select a type of pokemon</h2>
+
+  <div class="m-5" id="coucou">
+    <a routerLink="/pokemon/{{type}}" *ngFor="let type of types ">
+      <span id="type" class="badge m-3"> {{type.name}}</span>
     </a>
-  </li>
-</ul>
+  </div>
+</div>
+
+
