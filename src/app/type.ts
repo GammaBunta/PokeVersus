@@ -1,3 +1,4 @@
+import { Move } from "./move";
 export class Type{
   name : string;
 }
@@ -15,8 +16,3 @@ export class MoveSpec {
   move: Move;
 }
 
-export class Move {
-  name: String;
-  url: String;
-  
-}

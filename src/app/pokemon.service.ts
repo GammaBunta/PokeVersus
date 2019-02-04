@@ -21,7 +21,7 @@ export class PokemonService {
     return this.http.get(url);
   }
 
-  getPokemon(id: number): Observable<Pokemon> {
+  getPokemon(id: number): Observable<any> {
     const url = `${this.pokeUrl}/pokemon/${id}`;
     return this.http.get(url);
   }

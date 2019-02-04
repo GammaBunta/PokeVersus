@@ -21,5 +21,4 @@ export class TypeService {
     const url = `${this.pokeUrl}/type/`;
     return this.http.get(url);
   }
-
 }
