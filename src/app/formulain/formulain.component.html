@@ -1,27 +1,51 @@
-<div width="40%">
-  <h4> Your Pocket Monster : {{poke.name}}</h4>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-6">
 
-  <label>Please choose the move you want to try :
-    <select>
-      <option (select)="selectMove(move)" *ngFor="let move of moves">{{move.name}}</option>
-    </select>
-  </label>
+      <div class="row">
+        <h4> Your Pocket Monster : {{poke.name}}</h4>
+      </div>
+      
+      <div class="row">
+        <label>Please choose the move you want to try :
+          <select>
+            <option (select)="selectMove(move)" *ngFor="let move of moves">{{move.name}}</option>
+          </select>
+        </label>
+      </div>
+      
+      <div class="row">
+        <input placeholder="Level...">
+      </div>
+      <div class="row">
+        <input placeholder="Attack...">
+      </div>
+      <div class="row">
+        <input placeholder="Special Attack...">
+      </div>
 
-  <input [(ngModel)]="poke_level"     placeholder="Level...">
-  <input [(ngModel)]="att"     placeholder="Attack...">
-  <input [(ngModel)]="att_spe" placeholder="Special Attack...">
+    </div>
 
+    <div width="col-md-4">
+      <div class="row">
+        <h4> Adversary : {{def.name}}</h4>
+      </div>
 
-</div>
-<div width="40%">
-  <h4> Adversary : {{def.name}}</h4>
+      <div class="row">
+        <label>Please choose the pokemon you want to attack :
+          <select>
+            <option (select)="selectDef(poke_def)" *ngFor="let poke_def of pokemons">{{poke_def.name}}</option>
+          </select>
+        </label>
+      </div>
 
-  <label>Please choose the pokemon you want to attack :
-    <select>
-      <option (select)="selectDef(poke_def)" *ngFor="let poke_def of pokemons">{{poke_def.name}}</option>
-    </select>
-  </label>
-
-  <input [(ngModel)]="def_level"     placeholder="Level...">
-
+      <div class="row">
+        <input placeholder="Level...">
+      </div>
+      
+    </div>
+  </div>
+  <div class="row center">
+    <input type="submit" name="submit" value="Submit">
+  </div>
 </div>

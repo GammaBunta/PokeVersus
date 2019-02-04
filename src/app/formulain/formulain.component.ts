@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { PokemonService } from '../pokemon.service';
 import {ActivatedRoute} from '@angular/router';
 import {Observable} from 'rxjs';
-import {Pokemon, Move} from '../type';
+import {Pokemon} from '../type';
+import {Move} from '../move';
 
 @Component({
   selector: 'app-formulain',
