@@ -6,7 +6,13 @@ export class Type {
 
 export class TypeDetail {
     name: string;
-    damage_relations: any[];
+    damage_relations: DamageRelations;
+}
+
+export class DamageRelations {
+    double_damage_to: Type[];
+    half_damage_to: Type[];
+    no_damage_to: Type[];
 }
 
 export class Pokemon {
