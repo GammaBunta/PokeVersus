@@ -11,7 +11,7 @@ export class TestEfficaciteComponent implements OnInit {
 
   att: Type = { name : 'flying' };
   def: Type = { name : 'bug' };
-  result = -1;
+  result = 1;
 
   constructor(private effserv: EfficaciteService) {}
 
@@ -22,7 +22,7 @@ export class TestEfficaciteComponent implements OnInit {
     });
   }
 
-      private callback(attack: TypeDetail, defense: Type): number {
+    private callback(attack: TypeDetail, defense: Type): number {
         attack.damage_relations.double_damage_to.forEach(element => {
             if (defense.name.includes(element.name.toString())) {
                 return 2;
@@ -40,6 +40,12 @@ export class TestEfficaciteComponent implements OnInit {
         });
         return 1;
     }
-
-
+/*getEfficacites(attack: Type, defense: Type[]) {
+        let efficacite = 1;
+        defense.forEach(value => {
+            efficacite *= this.getEfficacite(attack, value);
+        });
+        return efficacite;
+    }
+*/
 }
