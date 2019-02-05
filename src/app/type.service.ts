@@ -13,7 +13,7 @@ const httpOptions = {
 
 export class TypeService {
 
-  private pokeUrl = 'http://pokeapi.salestock.net/api/v2';
+  private pokeUrl = 'https://pokeapi.co/api/v2';
 
   constructor(private http: HttpClient) {}
 

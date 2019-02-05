@@ -6,6 +6,7 @@ import { PokemonComponent } from './pokemon/pokemon.component';
 import { TypeComponent } from './type/type.component';
 import {AppRoutingModule} from './app-routing.module';
 import { FormulainComponent } from './formulain/formulain.component';
+import {FormsModule} from '@angular/forms';
 
 
 @NgModule({
@@ -15,11 +16,13 @@ import { FormulainComponent } from './formulain/formulain.component';
     TypeComponent,
     FormulainComponent,
 
+
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
