@@ -40,6 +40,7 @@ export class FormulainComponent implements OnInit {
     //GET LE POKE ET MODIFIER L'OBJET POKEMON
     this.pokemonService.getPokemon(+this.route.snapshot.paramMap.get('id')).subscribe(pokemon => this.poke = pokemon);
     this.pokemonService.getPokemons().subscribe(pokemons => this.pokemons = pokemons);
+
     this.moveService.getMoves(this.poke.name).subscribe(data => {
       for (let move of data['moves']) {
         this.moves.subscribe(data => this.moves =  move['move']['name']);

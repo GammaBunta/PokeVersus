@@ -14,4 +14,6 @@ export class MoveService {
     const url = `${this.pokeUrl}pokemon/${id}/`;
     return this.http.get(url);
   }
+
+
 }
