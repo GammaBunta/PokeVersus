@@ -1,4 +1,14 @@
-export class Move{
-  name : string;
+import {Type} from '@angular/core';
 
+export class Move {
+  name: string;
 }
+
+export class MoveDetail {
+  accuracy: number;
+  damage_class: Type;
+  type: Type;
+  power: number;
+}
+
+
