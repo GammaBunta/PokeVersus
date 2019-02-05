@@ -24,6 +24,8 @@ export class TestEfficaciteComponent implements OnInit {
 
     private callback(attack: TypeDetail, defense: Type): number {
         attack.damage_relations.double_damage_to.forEach(element => {
+            console.log(defense);
+            console.log(element);
             if (defense.name.includes(element.name.toString())) {
                 return 2;
             }
