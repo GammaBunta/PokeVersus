@@ -1,6 +1,6 @@
-<div class="container-fluid">
+<div class="container-fluid m-5 mr-5 justify-content-center">
   <div class="row">
-    <div class="col-md-6">
+    <div class="col-md-4 mt-5 mr-5">
 
       <div class="row">
         <h4> Your Pocket Monster : {{poke.name}}</h4>
@@ -8,44 +8,47 @@
       
       <div class="row">
         <label>Please choose the move you want to try :
-          <select>
+          <select class="form-control">
             <option (select)="selectMove(move)" *ngFor="let move of moves">{{move.name}}</option>
           </select>
         </label>
       </div>
       
       <div class="row">
-        <input placeholder="Level...">
+        <input class="form-control" min="1" type="number"  placeholder="Level...">
       </div>
       <div class="row">
-        <input placeholder="Attack...">
+        <input class="form-control" placeholder="Attack...">
       </div>
       <div class="row">
-        <input placeholder="Special Attack...">
+        <input class="form-control" placeholder="Special Attack...">
       </div>
 
     </div>
 
-    <div width="col-md-4">
+    <div class="col-md-4 mt-5 ml-5 mb-5 mr-5 float-right">
       <div class="row">
         <h4> Adversary : {{def.name}}</h4>
       </div>
 
       <div class="row">
         <label>Please choose the pokemon you want to attack :
-          <select>
+          <select class="form-control">
             <option (select)="selectDef(poke_def)" *ngFor="let poke_def of pokemons">{{poke_def.name}}</option>
           </select>
         </label>
       </div>
 
       <div class="row">
-        <input placeholder="Level...">
+        <input class="form-control" min="1" type="number" placeholder="Level...">
       </div>
       
     </div>
   </div>
-  <div class="row center">
-    <input type="submit" name="submit" value="Submit">
+  <div class="row center mt-5 justify-content-center">
+    <div class="col-md-3">
+      <input class="form-control" type="submit" name="submit" value="Submit">
+    </div>
+
   </div>
 </div>

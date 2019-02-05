@@ -24,9 +24,7 @@ export class PokemonComponent implements OnInit {
 
   getPokemonTypes(): void {
     this.id = this.route.snapshot.paramMap.get('id');
-    console.log('poke-compo : ' + this.id);
     this.pokemonService.getPokemonType(this.id).subscribe(data => this.pokemons = data['pokemon']);
-
   }
 
 }

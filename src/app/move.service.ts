@@ -8,9 +8,9 @@ export class MoveService {
 
   constructor(private http: HttpClient) {}
 
-  private pokeUrl = 'https://pokeapi.co/api/v2/';
+  private pokeUrl = 'https://pokeapi.co/api/v2';
 
-  getMoves(id: number): Observable<any> {
+  getMoves(id: String): Observable<any> {
     const url = `${this.pokeUrl}pokemon/${id}/`;
     return this.http.get(url);
   }
