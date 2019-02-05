@@ -2,9 +2,14 @@ import { Component, OnInit } from '@angular/core';
 import { PokemonService } from '../pokemon.service';
 import {ActivatedRoute} from '@angular/router';
 import {Observable} from 'rxjs';
-import {Pokemon} from '../type';
+import {Pokemon} from '../pokemon';
 import {Move} from '../move';
 import {MoveService} from '../move.service';
+import {NgModule} from '@angular/core';
+import {FormsModule} from '@angular/forms';
+import {BrowserModule} from '@angular/platform-browser';
+import {DataSend} from '../dataSend';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-formulain',
@@ -14,39 +19,33 @@ import {MoveService} from '../move.service';
 export class FormulainComponent implements OnInit {
 
   constructor(private pokemonService: PokemonService, private moveService: MoveService,
-              private route: ActivatedRoute) { }
+              private route: ActivatedRoute, private router: Router) { }
 
-  poke: Pokemon;
-  move: Move;
-  poke_level: number;
-  att: number;
-  att_spe: number;
-  
-  def: Pokemon;
-  def_level: number;
+  poke: Pokemon = new Pokemon();
+  moves: Move[];
 
-  pokemons: Observable<Pokemon>;
-  moves: Observable<Move[]>;
+  dataSend: DataSend = new DataSend();
 
-  selectDef(p: Pokemon) {
-    this.def = p;
-  }
 
-  selectMove(m: Move) {
-    this.move = m;
-  }
 
   ngOnInit() {
-    //GET LE POKE ET MODIFIER L'OBJET POKEMON
-    this.pokemonService.getPokemon(+this.route.snapshot.paramMap.get('id')).subscribe(pokemon => this.poke = pokemon);
-    this.pokemonService.getPokemons().subscribe(pokemons => this.pokemons = pokemons);
-
+    this.moves = [];
+    this.poke.setName(this.route.snapshot.paramMap.get('id'));
     this.moveService.getMoves(this.poke.name).subscribe(data => {
+
       for (let move of data['moves']) {
-        this.moves.subscribe(data => this.moves =  move['move']['name']);
+        this.moves.push({name: move['move']['name']});
       }
     });
+    console.log(this.moves);
+  }
 
+
+  onSubmit() {
+    this.dataSend.pokeA = this.poke.name;
+    console.log(this.dataSend.move);
+    console.log(this.dataSend);
+    this.router.navigateByUrl('URL');
   }
 
 }

@@ -18,6 +18,7 @@ export class PokemonComponent implements OnInit {
 
 
 
+
   ngOnInit() {
     this.getPokemonTypes();
   }
