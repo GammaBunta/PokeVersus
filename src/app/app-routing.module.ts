@@ -3,6 +3,7 @@ import {PokemonComponent} from './pokemon/pokemon.component';
 import {TypeComponent} from './type/type.component';
 import {RouterModule, Routes} from '@angular/router';
 import {FormulainComponent} from './formulain/formulain.component';
+import {CalculComponent} from './calcul/calcul.component';
 
 
 const routes: Routes = [
@@ -10,6 +11,7 @@ const routes: Routes = [
   {path : '', redirectTo: '/types', pathMatch: 'full'},
   {path : 'pokemon/:id', component : PokemonComponent},
   {path : 'formulain/:id', component : FormulainComponent},
+  {path : 'calcul/:pokeA/:pokeB/:levelA/:levelB/:attack/:attackSpe/:move', component : CalculComponent}
 ];
 
 @NgModule({

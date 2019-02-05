@@ -7,6 +7,7 @@ import { TypeComponent } from './type/type.component';
 import {AppRoutingModule} from './app-routing.module';
 import { FormulainComponent } from './formulain/formulain.component';
 import {FormsModule} from '@angular/forms';
+import { CalculComponent } from './calcul/calcul.component';
 
 
 @NgModule({
@@ -15,6 +16,7 @@ import {FormsModule} from '@angular/forms';
     PokemonComponent,
     TypeComponent,
     FormulainComponent,
+    CalculComponent,
 
 
   ],
