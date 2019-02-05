@@ -1,6 +1,9 @@
-import { Move } from './move';
 export class Pokemon {
-  name: string;
-  moves : Move[];
+  name: String ;
+
+  public setName(nom: String ): void {
+    this.name = nom;
+  }
 
 }
+

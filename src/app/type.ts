@@ -1,4 +1,3 @@
-import { Move } from './move';
 
 export class Type {
   name: String;
@@ -15,16 +14,5 @@ export class DamageRelations {
     no_damage_to: Type[];
 }
 
-export class Pokemon {
-  name: String;
-  moves: MovePointer[];
-}
 
-export class MovePointer {
-  move: MoveSpec;
-}
-
-export class MoveSpec {
-  move: Move;
-}
 
