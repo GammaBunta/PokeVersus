@@ -1,7 +1,12 @@
-import { Move } from "./move";
+import { Move } from './move';
 
-export class Type{
-  name : string;
+export class Type {
+  name: String;
+}
+
+export class TypeDetail {
+    name: string;
+    damage_relations: any[];
 }
 
 export class Pokemon {

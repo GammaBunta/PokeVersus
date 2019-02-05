@@ -1,4 +1,5 @@
-import {Type} from '@angular/core';
+import { Type } from './type';
+
 
 export class Move {
   name: string;
