@@ -1,6 +1,6 @@
 
 export class Type{
-  name : string;
+  name : String;
 }
 
 

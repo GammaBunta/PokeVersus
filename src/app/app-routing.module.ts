@@ -11,7 +11,7 @@ const routes: Routes = [
   {path : '', redirectTo: '/types', pathMatch: 'full'},
   {path : 'pokemon/:id', component : PokemonComponent},
   {path : 'formulain/:id', component : FormulainComponent},
-  {path : 'calcul/:pokeA/:pokeB/:levelA/:levelB/:attack/:attackSpe/:move', component : CalculComponent}
+  {path : 'calcul/:pokeA/:pokeB/:levelA/:levelB/:attack/:move', component : CalculComponent}
 ];
 
 @NgModule({

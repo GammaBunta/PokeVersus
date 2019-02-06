@@ -19,6 +19,7 @@ export class FormulainComponent implements OnInit {
 
   poke: Pokemon = new Pokemon();
   moves: Move[];
+  pokemons: Pokemon[];
 
   dataSend: DataSend = new DataSend();
 
@@ -27,21 +28,22 @@ export class FormulainComponent implements OnInit {
   ngOnInit() {
     this.moves = [];
     this.poke.setName(this.route.snapshot.paramMap.get('id'));
+    this.pokemonService.getPokemons().subscribe(pokemon => this.pokemons = pokemon['results']);
+
+
     this.moveService.getMoves(this.poke.name).subscribe(data => {
 
       for (let move of data['moves']) {
         this.moves.push({name: move['move']['name']});
       }
     });
-    console.log(this.moves);
+
   }
 
 
   onSubmit() {
     this.dataSend.pokeA = this.poke.name;
-    console.log(this.dataSend.move);
-    console.log(this.dataSend);
-    this.router.navigateByUrl(`/calcul/${this.dataSend.pokeA}/${this.dataSend.pokeB}/${this.dataSend.levelA}/${this.dataSend.levelB}/${this.dataSend.attack}/${this.dataSend.attackSpe}/${this.dataSend.move}`);
+    this.router.navigateByUrl(`/calcul/${this.dataSend.pokeA}/${this.dataSend.pokeB}/${this.dataSend.levelA}/${this.dataSend.levelB}/${this.dataSend.attack}/${this.dataSend.move}`);
   }
 
 }

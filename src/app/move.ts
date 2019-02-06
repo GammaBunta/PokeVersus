@@ -8,8 +8,8 @@ export class Move {
 
 export class MoveDetail {
   accuracy: number;
-  damage_class: Type<name>;
-  type: Type<name>;
+  damage_class: any;
+  type: String;
   power: number;
 }
 
