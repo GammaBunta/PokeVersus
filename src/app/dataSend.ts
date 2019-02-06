@@ -6,6 +6,5 @@ export class DataSend {
   levelA: number;
   levelB: number;
   attack: number;
-  attackSpe: number;
   move: String;
 }

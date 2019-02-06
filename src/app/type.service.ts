@@ -21,4 +21,11 @@ export class TypeService {
     const url = `${this.pokeUrl}/type/`;
     return this.http.get(url);
   }
+
+  getType(poke: String ): Observable<any> {
+    const url = `${this.pokeUrl}/pokemon/${poke}`;
+    return this.http.get(url);
+  }
+
+
 }

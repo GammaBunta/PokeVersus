@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import {Observable} from 'rxjs';
+import {MoveDetail} from './move';
 
 @Injectable({providedIn: 'root'})
 
@@ -15,5 +16,10 @@ export class MoveService {
     return this.http.get(url);
   }
 
+
+  getMoveDetail(attackName: String): Observable<MoveDetail> {
+    const url =  `${this.pokeUrl}/move/${attackName}/`;
+    return this.http.get<MoveDetail>(url);
+  }
 
 }

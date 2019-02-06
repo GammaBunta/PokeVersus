@@ -35,8 +35,8 @@
 
       <div class="row">
         <label>Please choose the pokemon you want to attack :
-          <select [(ngModel)]="dataSend.pokeB" name="pokeB" ngModel  class="form-control">
-            <option  *ngFor="let poke_def of pokemons">{{poke_def.name}}</option>
+          <select [(ngModel)]="dataSend.pokeB" name="pokeB" ngModel class="form-control">
+            <option  *ngFor="let pokemon of pokemons">{{pokemon.name}} </option>
           </select>
         </label>
       </div>

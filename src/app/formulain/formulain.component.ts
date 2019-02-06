@@ -1,13 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { PokemonService } from '../pokemon.service';
 import {ActivatedRoute} from '@angular/router';
-import {Observable} from 'rxjs';
 import {Pokemon} from '../pokemon';
 import {Move} from '../move';
 import {MoveService} from '../move.service';
-import {NgModule} from '@angular/core';
-import {FormsModule} from '@angular/forms';
-import {BrowserModule} from '@angular/platform-browser';
 import {DataSend} from '../dataSend';
 import {Router} from '@angular/router';
 
@@ -23,6 +19,7 @@ export class FormulainComponent implements OnInit {
 
   poke: Pokemon = new Pokemon();
   moves: Move[];
+  pokemons: Pokemon[];
 
   dataSend: DataSend = new DataSend();
 
@@ -31,21 +28,22 @@ export class FormulainComponent implements OnInit {
   ngOnInit() {
     this.moves = [];
     this.poke.setName(this.route.snapshot.paramMap.get('id'));
+    this.pokemonService.getPokemons().subscribe(pokemon => this.pokemons = pokemon['results']);
+
+
     this.moveService.getMoves(this.poke.name).subscribe(data => {
 
       for (let move of data['moves']) {
         this.moves.push({name: move['move']['name']});
       }
     });
-    console.log(this.moves);
+
   }
 
 
   onSubmit() {
     this.dataSend.pokeA = this.poke.name;
-    console.log(this.dataSend.move);
-    console.log(this.dataSend);
-    this.router.navigateByUrl('URL');
+    this.router.navigateByUrl(`/calcul/${this.dataSend.pokeA}/${this.dataSend.pokeB}/${this.dataSend.levelA}/${this.dataSend.levelB}/${this.dataSend.attack}/${this.dataSend.move}`);
   }
 
 }

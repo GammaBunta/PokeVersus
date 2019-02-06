@@ -8,6 +8,7 @@ import {AppRoutingModule} from './app-routing.module';
 import { FormulainComponent } from './formulain/formulain.component';
 import { TestEfficaciteComponent } from './test-efficacite/test-efficacite.component';
 import {FormsModule} from '@angular/forms';
+import { CalculComponent } from './calcul/calcul.component';
 
 
 @NgModule({
@@ -17,8 +18,7 @@ import {FormsModule} from '@angular/forms';
     TypeComponent,
     FormulainComponent,
     TestEfficaciteComponent,
-
-
+    CalculComponent,
   ],
   imports: [
     BrowserModule,

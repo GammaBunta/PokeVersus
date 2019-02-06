@@ -3,9 +3,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import {Observable} from 'rxjs';
 import {Pokemon} from './pokemon';
 
-const httpOptions = {
-  headers: new HttpHeaders({ 'Content-Type': 'application/json' })
-};
+
 
 @Injectable({
   providedIn: 'root'
@@ -22,7 +20,13 @@ export class PokemonService {
 
 
   getPokemons(): Observable<any> {
-    const url = `${this.pokeUrl}/pokemon/`;
+    const url = `${this.pokeUrl}/pokemon/?limit=964`;
+    return this.http.get(url);
+  }
+
+
+  getDef(id: String): Observable<any>{
+    const url = `${this.pokeUrl}/pokemon/${id}`;
     return this.http.get(url);
   }
 }
