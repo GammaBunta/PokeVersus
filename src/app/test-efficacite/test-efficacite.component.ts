@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Type, TypeDetail } from '../type';
 import { EfficaciteService } from '../efficacite.service';
+import { deepEqual } from 'assert';
 
 @Component({
   selector: 'app-test-efficacite',
@@ -9,37 +10,44 @@ import { EfficaciteService } from '../efficacite.service';
 })
 export class TestEfficaciteComponent implements OnInit {
 
-  att: Type = { name : 'flying' };
-  def: Type = { name : 'bug' };
-  result = 1;
+  att: Type = { name : 'ground' };
+  def: Type[] = [ { name : 'poison' }, { name : 'bug' } ];
+  result = -1;
 
   constructor(private effserv: EfficaciteService) {}
 
 
   ngOnInit() {
     this.effserv.getTypeDetail(this.att).subscribe(result => {
-        this.result = this.callback(result, this.def);
+        let efficacite = 1;
+        // tslint:disable-next-line:prefer-const
+        for (let type of this.def) {
+            efficacite *= this.callback(result, type);
+        }
+        this.result = efficacite;
     });
   }
-
+/* Quand intégrée, cette méthode devra remplacer les defense.name par des defense['name']
+*/
     private callback(attack: TypeDetail, defense: Type): number {
-        attack.damage_relations.double_damage_to.forEach(element => {
-            console.log(defense);
-            console.log(element);
-            if (defense.name.includes(element.name.toString())) {
-                return 2;
-            }
-        });
-        attack.damage_relations.half_damage_to.forEach(element => {
-            if (defense.name.includes(element.name.toString())) {
-                return 1 / 2;
-            }
-        });
-        attack.damage_relations.no_damage_to.forEach(element => {
-            if (defense.name.includes(element.name.toString())) {
-                return 0;
-            }
-        });
+        // tslint:disable-next-line:prefer-const
+        for (let element of attack['damage_relations']['double_damage_to']) {
+                if (defense.name.charAt(0) === element['name'].charAt(0) && defense.name.charAt(1) === element['name'].charAt(1)) {
+                    return 2;
+                }
+        }
+        // tslint:disable-next-line:prefer-const
+        for (let element of attack['damage_relations']['half_damage_to']) {
+                if (defense.name.charAt(0) === element['name'].charAt(0) && defense.name.charAt(1) === element['name'].charAt(1)) {
+                    return 1 / 2;
+                }
+        }
+        // tslint:disable-next-line:prefer-const
+        for (let element of attack['damage_relations']['no_damage_to']) {
+                if (defense.name.charAt(0) === element['name'].charAt(0) && defense.name.charAt(1) === element['name'].charAt(1)) {
+                    return 0;
+                }
+        }
         return 1;
     }
 /*getEfficacites(attack: Type, defense: Type[]) {

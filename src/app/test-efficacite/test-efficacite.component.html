@@ -1,1 +1,1 @@
-<p>Efficacité de {{att.name}} contre {{def.name}} : {{result}}</p>
+<p>Efficacité de {{att.name}} contre <span *ngFor="let item of def">{{item.name}}, </span> : {{result}}</p>

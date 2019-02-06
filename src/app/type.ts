@@ -4,8 +4,12 @@ export class Type {
 }
 
 export class TypeDetail {
-    name: string;
+    name: String;
     damage_relations: DamageRelations;
+}
+
+export class N {
+    n: Type;
 }
 
 export class DamageRelations {
