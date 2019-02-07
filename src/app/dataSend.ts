@@ -1,5 +1,3 @@
-import {Move} from './move';
-
 export class DataSend {
   pokeA: String;
   pokeB: String;

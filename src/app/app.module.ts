@@ -6,7 +6,6 @@ import { PokemonComponent } from './pokemon/pokemon.component';
 import { TypeComponent } from './type/type.component';
 import {AppRoutingModule} from './app-routing.module';
 import { FormulainComponent } from './formulain/formulain.component';
-import { TestEfficaciteComponent } from './test-efficacite/test-efficacite.component';
 import {FormsModule} from '@angular/forms';
 import { CalculComponent } from './calcul/calcul.component';
 
@@ -17,7 +16,6 @@ import { CalculComponent } from './calcul/calcul.component';
     PokemonComponent,
     TypeComponent,
     FormulainComponent,
-    TestEfficaciteComponent,
     CalculComponent,
   ],
   imports: [

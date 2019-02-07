@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {PokemonService} from '../pokemon.service';
-import {Pokemon} from '../pokemon';
+import {Pokemon} from '../json_classes';
 import {ActivatedRoute} from '@angular/router';
+import { TypeService } from '../type.service';
 
 
 @Component({
@@ -13,7 +14,7 @@ export class PokemonComponent implements OnInit {
 
   pokemons: Pokemon[];
   id: String;
-  constructor(private pokemonService: PokemonService,
+  constructor(private typeService: TypeService,
               private route: ActivatedRoute) {}
 
 
@@ -25,7 +26,7 @@ export class PokemonComponent implements OnInit {
 
   getPokemonTypes(): void {
     this.id = this.route.snapshot.paramMap.get('id');
-    this.pokemonService.getPokemonType(this.id).subscribe(data => this.pokemons = data['pokemon']);
+    this.typeService.getTypeDetail(this.id.toString()).subscribe(data => this.pokemons = data['pokemon']);
   }
 
 }

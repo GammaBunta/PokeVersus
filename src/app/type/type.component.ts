@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {TypeService} from '../type.service';
-import {Type} from '../type';
+import {Type} from '../json_classes';
 
 @Component({
   selector: 'app-type',
@@ -16,7 +16,7 @@ export class TypeComponent implements OnInit {
   ngOnInit() {
     this.getTypes();
   }
-  
+
   getTypes(): void {
     this.typeService.getTypes().subscribe(data => this.types = data['results']);
   }
