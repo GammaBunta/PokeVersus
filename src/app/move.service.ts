@@ -13,4 +13,6 @@ export class MoveService {
     const url =  `${this.pokeUrl}/move/${attackName}/`;
     return this.http.get<MoveDetail>(url);
   }
+
+
 }
