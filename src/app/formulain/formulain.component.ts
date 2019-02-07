@@ -1,13 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { PokemonService } from '../pokemon.service';
 import {ActivatedRoute} from '@angular/router';
-import {Observable} from 'rxjs';
-import {Pokemon} from '../pokemon';
-import {Move} from '../move';
+import {Pokemon, Move} from '../json_classes';
 import {MoveService} from '../move.service';
-import {NgModule} from '@angular/core';
-import {FormsModule} from '@angular/forms';
-import {BrowserModule} from '@angular/platform-browser';
 import {DataSend} from '../dataSend';
 import {Router} from '@angular/router';
 
@@ -18,11 +13,11 @@ import {Router} from '@angular/router';
 })
 export class FormulainComponent implements OnInit {
 
-  constructor(private pokemonService: PokemonService, private moveService: MoveService,
-              private route: ActivatedRoute, private router: Router) { }
+  constructor(private pokemonService: PokemonService, private route: ActivatedRoute, private router: Router) { }
 
   poke: Pokemon = new Pokemon();
   moves: Move[];
+  pokemons: Pokemon[];
 
   dataSend: DataSend = new DataSend();
 
@@ -30,22 +25,25 @@ export class FormulainComponent implements OnInit {
 
   ngOnInit() {
     this.moves = [];
-    this.poke.setName(this.route.snapshot.paramMap.get('id'));
-    this.moveService.getMoves(this.poke.name).subscribe(data => {
+    this.poke.name = this.route.snapshot.paramMap.get('id');
+    this.pokemonService.getPokemons().subscribe(pokemon => this.pokemons = pokemon['results']);
 
+
+    this.pokemonService.getPokemonDetail(this.poke.name).subscribe(data => {
+
+      // tslint:disable-next-line:prefer-const
       for (let move of data['moves']) {
         this.moves.push({name: move['move']['name']});
       }
     });
-    console.log(this.moves);
+
   }
 
 
   onSubmit() {
     this.dataSend.pokeA = this.poke.name;
-    console.log(this.dataSend.move);
-    console.log(this.dataSend);
-    this.router.navigateByUrl('URL');
+    this.router.navigateByUrl(`/calcul/${this.dataSend.pokeA}/${this.dataSend
+        .pokeB}/${this.dataSend.levelA}/${this.dataSend.levelB}/${this.dataSend.attack}/${this.dataSend.move}`);
   }
 
 }
