@@ -10,7 +10,7 @@
 
             <div *ngIf="moveget">
                 <p>Move : {{move['name']}}</p>
-                <p>Move type : {{move['type']}}</p>
+                <p>Move type : {{move['type']['name']}}</p>
                 <p *ngIf="move['power'] > 0">Move power : {{move['power']}}</p>
                 <p *ngIf="move['power'] < 1" style="font-style: italic">This move make no damage !</p>
             </div>
@@ -29,7 +29,7 @@
             <p>Results : </p>
             <p *ngIf="stab !== -1">STAB : {{stab}}</p>
             <p *ngIf="efficacite !== -1">
-                Efficacity of {{move['type']}} VS 
+                Efficacity of {{move['type']['name']}} VS 
                 <span *ngFor="let element of pokeD['types']">
                     {{element['type']['name']}}
                 </span>
