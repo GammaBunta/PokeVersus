@@ -1,4 +1,53 @@
-<p>
-  efficacite : {{efficacite}}
-  stab : {{stab}} 
-</p>
+<div   class="container-fluid pd-5" id="final">
+    
+    <div class="row mt-5 justify-content-center text-align-center">
+    
+        <div id="att" class="col-md-4 mt-5 mr-5 ">
+            <div *ngIf="pokeAget">
+                <p>Your Pokemon : {{pokeA['name']}}</p>
+                <p>Type(s) : <span *ngFor="let element of pokeA['types']">{{element['type']['name']}} </span></p>
+            </div>
+
+            <div *ngIf="moveget">
+                <p>Move : {{move['name']}}</p>
+                <p>Move type : {{move['type']['name']}}</p>
+                <p *ngIf="move['power'] > 0">Move power : {{move['power']}}</p>
+                <p *ngIf="move['power'] < 1" style="font-style: italic">This move makes no damage !</p>
+            </div>
+        </div>
+
+        <div id="def" class="col-md-4 mt-5 mr-5">
+            <div *ngIf="pokeDget">
+                <p>VS Pokemon : {{pokeD['name']}}</p>
+                <p>Type(s) : <span *ngFor="let element of pokeD['types']">{{element['type']['name']}} </span></p>
+            </div>
+        </div>
+    </div>
+
+    <div class="row justify-content-center text-align-center mt-5">
+      <div id="stats"  class="col-md-5">
+        <div *ngIf="move['power'] > 0">
+          <p>RESULTS </p>
+          <p *ngIf="stab !== -1">STAB : {{stab}}</p>
+          <p *ngIf="efficacite !== -1">
+            Efficacity of {{move['type']['name']}} VS
+            <span *ngFor="let element of pokeD['types']">
+                    {{element['type']['name']}}
+                </span>
+            : {{efficacite}}
+          </p>
+          <p class="calfin" *ngIf="final != -1 ">Final result : {{final}}</p>
+          <p class="calfin" *ngIf="final === -1 ">Final result : 0 </p>
+        </div>
+      </div>
+
+        <p *ngIf="move['power'] < 1" style="font-style: italic">NO DAMAGE !</p>
+    </div>
+</div>
+
+<div id="warning" class="row ml-5 justify-content-center text-align-center" >
+<p><b>Warning ! </b> This calculator doesn't consider criticals, pokemon's items,
+    weather, strange attacks that knock out everytime etc...</p>
+<p>The Adversary's defense is very approximatively calculate
+ (DefenseBase / SpecialDefenseBase + Level)</p>
+</div>

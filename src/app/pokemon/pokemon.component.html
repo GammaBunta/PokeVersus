@@ -1,8 +1,8 @@
 
-<h1>Pokemons</h1>
-<ul>
-  <li *ngFor="let poke of pokemons">
-    <a routerLink="/formulain/{{(poke.pokemon.name)}}" class="badge badge-pill badge-primary"> {{poke.pokemon.name}}</a>
-  </li>
-</ul>
 
+<div class="dives">
+<h2 class="titres" >Select a Pokemon</h2>
+<a *ngFor="let poke of pokemons" routerLink="/formulain/{{(poke.pokemon.name)}}" >
+  <span id="type1" class="badge m-3"> {{(poke.pokemon.name)}}</span>
+</a>
+</div>
