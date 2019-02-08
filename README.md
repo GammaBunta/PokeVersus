@@ -7,7 +7,7 @@ Sarah Brood
 Paco Pompeani
 Samuel Michel 
 
-Etudiant en 2ème année de DUT Informatique 
+Etudiants en 2ème année de DUT Informatique 
 
 ## What is Pokemon Versus 
 
