@@ -44,21 +44,19 @@ export class CalculComponent implements OnInit {
     const paramMap = this.route.snapshot.paramMap;
 
     this.def = 50;
+    this.att = + paramMap.get('attack');
     this.efficacite = -1;
     this.stab = -1;
     this.levelD = + paramMap.get('levelB');
     this.levelA = + paramMap.get('levelA');
+    this.levelD = + paramMap.get('levelB');
     const moveName = paramMap.get('move');
     const pokeAname = paramMap.get('pokeA');
     const pokeDname = paramMap.get('pokeB');
 
-
     this.getMove(moveName);
     this.getPokemonA(pokeAname);
     this.getPokemonD(pokeDname);
-
-
-
   }
 
   getPokemonA(pokeName: string) {
