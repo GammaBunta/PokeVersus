@@ -1,9 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { PokemonService } from '../pokemon.service';
 import {ActivatedRoute} from '@angular/router';
-import {Pokemon, Move} from '../json_classes';
-import {MoveService} from '../move.service';
-import {DataSend} from '../dataSend';
+import {Pokemon, Move, DataSend} from '../json_classes';
 import {Router} from '@angular/router';
 
 @Component({

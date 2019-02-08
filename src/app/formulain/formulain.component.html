@@ -10,20 +10,20 @@
 
       <div class="row">
         <label>Please choose the move you want to try :
-          <select [(ngModel)]="dataSend.move" name="move" class="form-control" ngModel>
+          <select [(ngModel)]="dataSend.move"  name="move" class="form-control" ngModel required>
             <option  *ngFor="let move of moves">{{move.name}}</option>
           </select>
         </label>
       </div>
 
       <div class="row">
-        <input [(ngModel)]="dataSend.levelA" name="levelA" class="form-control" min="1" type="number"  placeholder="Level...">
+        <input [(ngModel)]="dataSend.levelA" name="levelA" class="form-control" min="1" type="number"  placeholder="Level..." required>
       </div>
       <div class="row">
-        <input [(ngModel)]="dataSend.attack" name="attack" ngModel  class="form-control" min="1" type="number"  placeholder="Attack...">
+        <input [(ngModel)]="dataSend.attack" name="attack" ngModel  class="form-control" min="1" type="number"  placeholder="Attack..." required>
       </div>
       <div class="row">
-        <input [(ngModel)]="dataSend.attackSpe" name="attackSpe " ngModel  class="form-control" min="1" type="number"  placeholder="Special Attack...">
+        <input [(ngModel)]="dataSend.attackSpe" name="attackSpe " ngModel  class="form-control" min="1" type="number"  placeholder="Special Attack..." required>
       </div>
 
     </div>
@@ -35,14 +35,14 @@
 
       <div class="row">
         <label>Please choose the pokemon you want to attack :
-          <select [(ngModel)]="dataSend.pokeB" name="pokeB" ngModel class="form-control">
+          <select [(ngModel)]="dataSend.pokeB"  name="pokeB" ngModel class="form-control" required>
             <option  *ngFor="let pokemon of pokemons">{{pokemon.name}} </option>
           </select>
         </label>
       </div>
 
       <div class="row">
-        <input [(ngModel)]="dataSend.levelB" name="levelB " ngModel  class="form-control" min="1" type="number" placeholder="Level...">
+        <input [(ngModel)]="dataSend.levelB" name="levelB " ngModel  class="form-control" min="1" type="number" placeholder="Level..." required>
       </div>
 
     </div>

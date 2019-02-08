@@ -1,9 +1,10 @@
 import {Component, OnInit} from '@angular/core';
-import { MoveDetail, Type, TypeDetail, PokemonDetail } from '../json_classes';
+import { MoveDetail, Type, TypeDetail, PokemonDetail} from '../json_classes';
 import {MoveService} from '../move.service';
 import {ActivatedRoute} from '@angular/router';
 import {TypeService} from '../type.service';
 import { PokemonService } from '../pokemon.service';
+import {angularMath} from 'angular-ts-math';
 
 @Component({
   selector: 'app-calcul',
@@ -11,6 +12,7 @@ import { PokemonService } from '../pokemon.service';
   styleUrls: ['./calcul.component.css']
 })
 export class CalculComponent implements OnInit {
+
   constructor(private moveService: MoveService, private route: ActivatedRoute,
      private typeService: TypeService, private pokemonService: PokemonService) { }
 
@@ -19,9 +21,13 @@ export class CalculComponent implements OnInit {
   pokeA: PokemonDetail;
   pokeD: PokemonDetail;
   levelA: number;
+  levelD: number;
   def: number;
   stab: number;
   efficacite: number;
+  att: number;
+  final: number;
+
 
   pokeAget: boolean;
   pokeDget: boolean;
@@ -38,9 +44,11 @@ export class CalculComponent implements OnInit {
     const paramMap = this.route.snapshot.paramMap;
 
     this.def = 50;
+    this.att = + paramMap.get('attack');
     this.efficacite = -1;
     this.stab = -1;
     this.levelA = + paramMap.get('levelA');
+    this.levelD = + paramMap.get('levelB');
     const moveName = paramMap.get('move');
     const pokeAname = paramMap.get('pokeA');
     const pokeDname = paramMap.get('pokeB');
@@ -48,7 +56,6 @@ export class CalculComponent implements OnInit {
     this.getMove(moveName);
     this.getPokemonA(pokeAname);
     this.getPokemonD(pokeDname);
-
   }
 
   getPokemonA(pokeName: string) {
@@ -64,10 +71,23 @@ export class CalculComponent implements OnInit {
         this.pokemonService.getPokemonDetail(pokeName).subscribe(data => {
             this.pokeD = data;
             this.pokeDget = true;
+            let i = 0 ;
+          // tslint:disable-next-line:prefer-const
+            for (let stat of this.pokeD['stats']) {
+              if (i === 3) {
+                this.def = stat['base_stat'] + 2 * this.levelD ;
+              }
+              i++;
+            }
+          console.log('défense pokémon D : ');
+          console.log(this.def);
+
+
             console.log('pokemon defense :');
             console.log(this.pokeD);
             this.calculEfficacite();
         });
+
   }
   getMove(moveName: string) {
         this.moveService.getMoveDetail(moveName).subscribe(data => {
@@ -114,18 +134,26 @@ export class CalculComponent implements OnInit {
 
     private calculEfficacite() {
         if (this.pokeDget && this.movetypedetailget) {
-            let efficacite = 1;
-            // tslint:disable-next-line:prefer-const
-            for (let typeDef of this.pokeD['types']) {
-                console.log('typedef :');
-                console.log(typeDef);
-                efficacite *= this.calculEfficaciteSlave(this.moveTypeDetail, typeDef['type']);
-            }
-            this.efficacite = efficacite;
-            console.log('efficacite : ');
-            console.log(this.efficacite);
+          let efficacite = 1;
+          // tslint:disable-next-line:prefer-const
+          for (let typeDef of this.pokeD['types']) {
+            console.log('typedef :');
+            console.log(typeDef);
+            efficacite *= this.calculEfficaciteSlave(this.moveTypeDetail, typeDef['type']);
+          }
+          this.efficacite = efficacite;
+          console.log('efficacite : ');
+          console.log(this.efficacite);
+
+          if (this.efficacite && this.pokeA && this.pokeD) {
+            this.finalcalcul();
+          } else {
+            console.log('non');
+          }
+
         }
     }
+
     private calculEfficaciteSlave(attack: TypeDetail, defense: Type) {
         // tslint:disable-next-line:prefer-const
         for (let element of attack['damage_relations']['double_damage_to']) {
@@ -147,5 +175,43 @@ export class CalculComponent implements OnInit {
         }
         return 1;
     }
+
+
+    private finalcalcul() {
+      console.log('final');
+      const random = angularMath.getIntegerRandomRange(0.85, 1 );
+
+      const CM = this.stab * this.efficacite * random;
+      const haut = (this.levelA * 0.4 + 2) * this.att * this.move['power'];
+
+      const bas = (this.def * 50 );
+
+      const calcul = ((haut / bas) + 2) * CM;
+      this.final = angularMath.backIntegerOfNumber(calcul);
+      console.log('random');
+      console.log(random);
+      console.log('level A : ')
+      console.log(this.levelA);
+      console.log('Attaque : ');
+      console.log(this.att);
+      console.log('Power : ');
+      console.log(this.move['power']);
+      console.log('Haut');
+      console.log(haut);
+      console.log('Def : ');
+      console.log(this.def);
+      console.log('Bas');
+      console.log(bas);
+      console.log('CM : ');
+      console.log(CM);
+      console.log('Calcul : ');
+      console.log(calcul);
+      console.log('final : ');
+      console.log(this.final);
+
+
+  }
+
+
 
 }

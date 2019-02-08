@@ -16,6 +16,10 @@ export class MetaType {
     type: Type;
 }
 
+export class Stat {
+  base_stat: number;
+}
+
 export class Pokemon {
   name: String ;
 }
@@ -24,6 +28,7 @@ export class PokemonDetail {
   id: number ;
   moves: Move[];
   types: MetaType[];
+  stats: Stat[];
 }
 
 export class Move {
@@ -36,3 +41,13 @@ export class MoveDetail {
   type: Type;
   power: number;
 }
+
+export class DataSend {
+  pokeA: String;
+  pokeB: String;
+  levelA: number;
+  levelB: number;
+  attack: number;
+  move: String;
+}
+
