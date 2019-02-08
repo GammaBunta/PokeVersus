@@ -1,5 +1,50 @@
-<p>
-  efficacite : {{efficacite}}
-  stab : {{stab}}
-  final : {{final}}
-</p>
+
+<div class="container-fluid m-5 mr-5 justify-content-center">
+    
+    <div class="row">
+    
+        <div class="col-md-4 mt-5 mr-5">
+            <div *ngIf="pokeAget">
+                <p>Your Pokemon : {{pokeA['name']}}</p>
+                <p>Type(s) : <span *ngFor="let element of pokeA['types']">{{element['type']['name']}} </span></p>
+            </div>
+
+            <div *ngIf="moveget">
+                <p>Move : {{move['name']}}</p>
+                <p>Move type : {{move['type']}}</p>
+            </div>
+        </div>
+
+        <div class="col-md-4 mt-5 mr-5">
+            <div *ngIf="pokeDget">
+                <p>VS Pokemon : {{pokeD['name']}}</p>
+                <p>Type(s) : <span *ngFor="let element of pokeD['types']">{{element['type']['name']}} </span></p>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <p>Results : </p>
+        <p *ngIf="stab !== -1">STAB : {{stab}}</p>
+        <p *ngIf="efficacite !== -1">
+            Efficacity of {{move['type']}} VS 
+            <span *ngFor="let element of pokeD['types']">
+                {{element['type']['name']}}
+            </span>
+             : {{efficacite}}
+        </p>
+
+    </div>
+
+</div>
+
+
+<p></p>
+
+<div style="font-style: italic">
+<p><b>Warning ! </b> This calculator doesn't consider criticals, pokemon's items,
+    weather, strange attacks that knock out everytime etc...</p>
+<p>The Adversary's defense is very approximatively calculate
+ (DefenseBase / SpecialDefenseBase + 2 * Level)</p>
+</div>
+

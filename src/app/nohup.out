@@ -1,0 +1,63 @@
+Discord 0.0.8
+Starting updater.
+[Modules] Modules initializing
+[Modules] Distribution: remote
+[Modules] Host updates: enabled
+[Modules] Module updates: enabled
+[Modules] Module install path: /home/pako/snap/discord/88/.config/discord/0.0.8/modules
+[Modules] Module installed file path: /home/pako/snap/discord/88/.config/discord/0.0.8/modules/installed.json
+[Modules] Module download path: /home/pako/snap/discord/88/.config/discord/0.0.8/modules/pending
+[Modules] No updates to install
+[Modules] Checking for host updates.
+[Modules] Host is up to date.
+[Modules] Checking for module updates at https://discordapp.com/api/modules/stable/versions.json
+[Modules] No module updates available.
+[Modules] Starting to install discord_media...
+[Modules] Fetching discord_media@0 from https://discordapp.com/api/modules/stable/discord_media/0
+[Modules] Streaming discord_media@0 [251 bytes] to /home/pako/snap/discord/88/.config/discord/0.0.8/modules/pending/discord_media-0.zip
+[Modules] Finished module downloads. [success: 0] [failure: 1]
+[Modules] Checking for host updates.
+[Modules] Host is up to date.
+[Modules] Checking for module updates at https://discordapp.com/api/modules/stable/versions.json
+[Modules] No module updates available.
+[000:000] [5677] (audio_device_pulse_linux.cc:1857): Can't query latency
+[001:912] [5673] (audio_send_stream.cc:519): Unable to create encoder for {name: opus, clockrate_hz: 48000, num_channels: 1, parameters: {stereo: 0, usedtx: 0, useinbandfec: 0}}
+[001:912] [5673] (audio_send_stream.cc:261): Failed to set up send codec state.
+[006:458] [5673] (audio_send_stream.cc:519): Unable to create encoder for {name: opus, clockrate_hz: 48000, num_channels: 1, parameters: {stereo: 0, usedtx: 0, useinbandfec: 1}}
+[006:458] [5673] (audio_send_stream.cc:261): Failed to set up send codec state.
+[006:459] [5673] (audio_device_generic.cc:31): BuiltInAECIsAvailable: Not supported on this platform
+[006:518] [5673] (audio_send_stream.cc:519): Unable to create encoder for {name: opus, clockrate_hz: 48000, num_channels: 1, parameters: {stereo: 0, usedtx: 0, useinbandfec: 1}}
+[006:519] [5673] (audio_send_stream.cc:261): Failed to set up send codec state.
+[072:106] [5676] (audio_device_pulse_linux.cc:1857): Can't query latency
+Discord 0.0.8
+Starting updater.
+[Modules] Modules initializing
+[Modules] Distribution: remote
+[Modules] Host updates: enabled
+[Modules] Module updates: enabled
+[Modules] Module install path: /home/pako/snap/discord/88/.config/discord/0.0.8/modules
+[Modules] Module installed file path: /home/pako/snap/discord/88/.config/discord/0.0.8/modules/installed.json
+[Modules] Module download path: /home/pako/snap/discord/88/.config/discord/0.0.8/modules/pending
+[Modules] No updates to install
+[Modules] Checking for host updates.
+[Modules] Host is up to date.
+[Modules] Checking for module updates at https://discordapp.com/api/modules/stable/versions.json
+[Modules] No module updates available.
+[Modules] Starting to install discord_media...
+[Modules] Fetching discord_media@0 from https://discordapp.com/api/modules/stable/discord_media/0
+[Modules] Streaming discord_media@0 [251 bytes] to /home/pako/snap/discord/88/.config/discord/0.0.8/modules/pending/discord_media-0.zip
+[Modules] Finished module downloads. [success: 0] [failure: 1]
+[000:000] [8761] (audio_device_pulse_linux.cc:1857): Can't query latency
+[000:090] [8757] (audio_send_stream.cc:519): Unable to create encoder for {name: opus, clockrate_hz: 48000, num_channels: 1, parameters: {stereo: 0, usedtx: 0, useinbandfec: 0}}
+[000:091] [8757] (audio_send_stream.cc:261): Failed to set up send codec state.
+[000:470] [8757] (audio_send_stream.cc:519): Unable to create encoder for {name: opus, clockrate_hz: 48000, num_channels: 1, parameters: {stereo: 0, usedtx: 0, useinbandfec: 1}}
+[000:471] [8757] (audio_send_stream.cc:261): Failed to set up send codec state.
+[000:471] [8757] (audio_device_generic.cc:31): BuiltInAECIsAvailable: Not supported on this platform
+[000:732] [8757] (audio_send_stream.cc:519): Unable to create encoder for {name: opus, clockrate_hz: 48000, num_channels: 1, parameters: {stereo: 0, usedtx: 0, useinbandfec: 1}}
+[000:733] [8757] (audio_send_stream.cc:261): Failed to set up send codec state.
+[Modules] Checking for host updates.
+[Modules] Host is up to date.
+[Modules] Checking for module updates at https://discordapp.com/api/modules/stable/versions.json
+[Modules] No module updates available.
+[537:563] [8760] (audio_device_pulse_linux.cc:1857): Can't query latency
+[1702:664] [8760] (audio_device_pulse_linux.cc:1857): Can't query latency
