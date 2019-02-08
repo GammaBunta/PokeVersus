@@ -131,7 +131,7 @@ footer.footer {
 }
 
 
-#type{
+#type1{
   font-size: 1.5rem;
   background-color: #3b4cca;
   color : #ffde00;
@@ -139,14 +139,81 @@ footer.footer {
 }
 
 
-#titretype{
-  color :  #3b4cca;
-  text-align:center;
+#type2{
+  font-size: 1.5rem;
+  background-color: #3b4cca;
+  color : #ffde00;
   font-weight: bold;
 }
 
-#coucou {
-  width: 95%;
-  margin: auto;
+.titres{
+  font-size: 2rem;
+  font-weight: bold;
+  color : #3b4cca;
+  margin-top: 30px;
+  text-align: center;
+  margin-bottom: 50px;
+
+}
+
+.dives{
+  margin-top : 35px;
+  margin-left : 30px;
+  margin-right : 30px;
   text-align: center;
 }
+
+#formulaire{
+  text-align: center;
+  margin : auto;
+}
+
+#final{
+  text-align: center;
+  margin: auto;
+
+}
+
+#warning{
+  margin-top : 20px;
+  color : red;
+  font-weight: bold;
+  font-style: italic;
+
+}
+#att{
+  background-color: #3c5aa6;
+  border : 2px solid limegreen;
+  font-weight: bold;
+  color : #ffde00;
+
+}
+
+#def{
+  background-color: #3c5aa6;
+  border : 2px solid yellow;
+  font-weight: bold;
+  color : #ffde00;
+  padding-top: 55px;
+}
+
+#stats{
+  border : 5px solid red;
+  font-weight: bold;
+  background-color: paleturquoise;
+  color : red;
+}
+
+.calfin{
+  font-size: 20px;
+}
+
+#submit{
+  color : #ffde00;
+  background-color: #3b4cca;
+}
+
+.bandp{
+  margin-top : 150px;
+}
+

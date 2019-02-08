@@ -42,7 +42,7 @@ export class CalculComponent implements OnInit {
     this.movetypedetailget = false;
 
     const paramMap = this.route.snapshot.paramMap;
-
+    this.final = -1;
     this.def = 50;
     this.att = + paramMap.get('attack');
     this.efficacite = -1;
@@ -76,7 +76,7 @@ export class CalculComponent implements OnInit {
           // tslint:disable-next-line:prefer-const
             for (let stat of this.pokeD['stats']) {
               if (i === 3) {
-                this.def = stat['base_stat'] + 2 * this.levelD ;
+                this.def = stat['base_stat'] + this.levelD ;
               }
               i++;
             }

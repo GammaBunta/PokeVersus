@@ -1,36 +1,26 @@
 
 <header class="masthead text-white text-center">
-  <div class="overlay"></div>
-  <div class="container-fluid mt-5">
+  <div class="container-fluid ">
     <div class="row  justify-content-center">
       <div class="col-md-3 mt-5">
-        <img src="./assets/images/bulbi.png" width = "150" alt="bulbi image">
+        <img class="bandp" src="./assets/images/bulbi.png" width = "150" alt="bulbi image">
       </div>
       <div class="col-md-3">
 
-        <form>
-          <div class="form-row mt-5 pt-5">
-            <div class="col-12 col-md-9 mb-2 mb-md-0 mt-5">
-              <input  class="form-control form-control-lg" placeholder="your pokemon's name">
-            </div>
-            <div class="col-12 col-md-3 mt-5">
-              <button id="gp" type="submit" class="btn btn-block btn-lg btn-primary">GO</button>
-            </div>
-          </div>
+        <div class="dives">
+          <h2 class="titres" >Select a type of pokemon</h2>
 
-        </form>
+          <a routerLink="/pokemon/{{(id+1)}}" *ngFor="let type of types.slice(0, types.length-2); let id = index">
+            <span id="type2" class="badge m-3"> {{type.name}}</span>
+          </a>
+        </div>
       </div>
       <div class="col-md-3 mb-5">
-        <img src="./assets/images/pika.png" width = "150" alt="bulbi image">
+        <img class="bandp" src="./assets/images/pika.png" width = "150" alt="bulbi image">
       </div>
     </div>
   </div>
 </header>
 
 
-<div class="mt-5">
-  <h2 id="titretype" class="mt-5">Select a type of pokemon</h2>
-    <a routerLink="/pokemon/{{(id+1)}}" *ngFor="let type of types.slice(0, types.length-2); let id = index">
-      <span id="type" class="badge m-3"> {{type.name}}</span>
-    </a>
-</div>
+

@@ -1,14 +1,15 @@
+<div id="formulaire">
 <form #formulain="ngForm" (ngSubmit)="onSubmit()">
 
   <div class="container-fluid m-5 mr-5 justify-content-center">
-  <div class="row">
-    <div class="col-md-4 mt-5 mr-5">
+  <div class="row justify-content-center">
+    <div class="col-md-4 mt-5 mr-5 justify-content-center">
 
-      <div class="row">
+      <div class="row justify-content-center">
         <h4> Your Pocket Monster : {{poke.name}}</h4>
       </div>
 
-      <div class="row">
+      <div class="row justify-content-center">
         <label>Please choose the move you want to try :
           <select [(ngModel)]="dataSend.move"  name="move" class="form-control" ngModel required>
             <option  *ngFor="let move of moves">{{move.name}}</option>
@@ -16,24 +17,24 @@
         </label>
       </div>
 
-      <div class="row">
+      <div class="row justify-content-center">
         <input [(ngModel)]="dataSend.levelA" name="levelA" class="form-control" min="1" type="number"  placeholder="Level..." required>
       </div>
-      <div class="row">
+      <div class="row justify-content-center">
         <input [(ngModel)]="dataSend.attack" name="attack" ngModel  class="form-control" min="1" type="number"  placeholder="Attack..." required>
       </div>
-      <div class="row">
+      <div class="row justify-content-center">
         <input [(ngModel)]="dataSend.attackSpe" name="attackSpe " ngModel  class="form-control" min="1" type="number"  placeholder="Special Attack..." required>
       </div>
 
     </div>
 
-    <div class="col-md-4 mt-5 ml-5 mb-5 mr-5 float-right">
-      <div class="row">
+    <div class="col-md-4 mt-5 ml-5 mb-5 mr-5 float-right justify-content-center">
+      <div class="row justify-content-center">
         <h4> Adversary : </h4>
       </div>
 
-      <div class="row">
+      <div class="row justify-content-center">
         <label>Please choose the pokemon you want to attack :
           <select [(ngModel)]="dataSend.pokeB"  name="pokeB" ngModel class="form-control" required>
             <option  *ngFor="let pokemon of pokemons">{{pokemon.name}} </option>
@@ -41,7 +42,7 @@
         </label>
       </div>
 
-      <div class="row">
+      <div class="row justify-content-center">
         <input [(ngModel)]="dataSend.levelB" name="levelB " ngModel  class="form-control" min="1" type="number" placeholder="Level..." required>
       </div>
 
@@ -49,9 +50,10 @@
   </div>
   <div class="row center mt-5 justify-content-center">
     <div class="col-md-3">
-      <input class="form-control" onclick="onSubmit()"  type="submit" name="submit" value="Submit">
+      <input id="submit" class="form-control   " onclick="onSubmit()"  type="submit" name="submit" value="Submit">
     </div>
 
   </div>
 </div>
 </form>
+</div>
